@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Header.jsx'
 import Nominations from './Nominations.jsx';
 import SearchBar from'./SearchBar.jsx';
-import SearchResults from './SearchResults.jsx';
+import SearchResults from './searchResults/SearchResults.jsx';
 
 
 
@@ -33,7 +33,8 @@ class UnconnectedApp extends Component {
 let mapStateToProps = (state) => {
   console.log('state', state);
   return {
-    queryMovie: state.queryMovie
+    queryMovie: state.queryMovie,
+    queryDetails: state.queryDetails
   };
 };
 let App = connect(mapStateToProps)(UnconnectedApp);

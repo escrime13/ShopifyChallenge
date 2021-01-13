@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class UnconnectedSearchBar extends Component {
-  constructor(props) {
-    super(props);
-    this.state={
-      searchTerm:""
-    }
-  }
+  
+
 
   handleSearchTermChange = async (event) => {
   let searchTerm = event.target.value
