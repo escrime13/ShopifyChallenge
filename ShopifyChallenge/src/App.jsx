@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Alert from 'bootstrap/js/dist/alert';
 import Header from './Header.jsx'
 import Nominations from './Nominations.jsx';
 import SearchBar from'./SearchBar.jsx';
@@ -22,7 +23,7 @@ class UnconnectedApp extends Component {
         <SearchResults queryMovie={this.props.queryMovie}/>
       </div>
       <div class="d-inline-flex">
-        <Nominations />
+        <Nominations nominations ={this.props.nominate}/>
       </div>
     </div>
 
@@ -34,7 +35,8 @@ let mapStateToProps = (state) => {
   console.log('state', state);
   return {
     queryMovie: state.queryMovie,
-    queryDetails: state.queryDetails
+    queryDetails: state.queryDetails, 
+    nominate: state.nominate,
   };
 };
 let App = connect(mapStateToProps)(UnconnectedApp);
