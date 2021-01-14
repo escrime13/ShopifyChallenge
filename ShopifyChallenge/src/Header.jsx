@@ -5,7 +5,7 @@ class UnconnectedHeader extends Component {
   render = () => {
       return (
         <div>
-            <h1 class="p-3 mb-2 text-center">
+            <h1 class="p-3 mt-5 mb-2 text-center text-white">
                 The Shoppies
             </h1>
         </div>

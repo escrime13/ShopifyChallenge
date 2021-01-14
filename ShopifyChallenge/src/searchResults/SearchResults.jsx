@@ -44,32 +44,61 @@ console.log("currentNomination", currentNomination)
       let movies = this.props.queryMovie
       return (
         <div>
-          
-              <h2 class="p-3 mb-2 text-center">
+            <div className="containerSearch">
+              <h2 class="text-white text-center pt-5 pb-5">
                   Search Results
               </h2>
+            <div class="text-white text-center">
+            </div>
+            <div class='container'>
+            <div class="row">
               {movies ? movies.map((result, idx)=>{
                   let poster = result.Poster
                   let title= result.Title
                   let year = result.Year
 
                   return(
-                      <div key={idx}>
-                          <img className="imageSmall" src={poster} />
+                      <div key={idx} class='col-6'>
+                          <div class='p-2 '>
+                            {poster === 'N/A' ? 
+                            <div class='align-middle'>
+                            <div className='noImage'>
+                             <div class='pt-2 pb-2'> {title}</div>
+                             <div> No Image Available</div>
+                            </div>
+                            </div>:
+                            
+                            <img className="imageSmall" src={poster} />}
+                          </div>
+                          <div class=" text-white text-center">
+                            <div>{title} {' ('}{year}{')'}</div> 
+        
+                            <div class="mx-auto" >
+                              <span>
+                                <MovieDetails title={title} />
+                              </span>
+                              <span class='ml-2'>
+                                <button 
+                                    type="button" class="btn btn-warning"                        
+                                    onClick ={() => this.handleNominates(result)}                     
+                                  >
+                                  Nominates
+                              </button>
+                              </span>
+                            </div>
+                         
+                        </div>
                         <div>
-                          <div>{title}</div>
-                          <div>{year}</div> 
- 
-                           <MovieDetails title={title} />
-                           <button                          
-                            onClick ={() => this.handleNominates(result)}                     
-                            type="button" class="btn btn-primary">
-                            Nominates
-                          </button>
+
+
+                        
                         </div>
                     </div>
                   )
               }):''}
+              </div>
+              </div>
+              </div>
             </div>
 
       );

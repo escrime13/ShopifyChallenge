@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class UnconnectedSearchBar extends Component {
-  
-
 
   handleSearchTermChange = async (event) => {
   let searchTerm = event.target.value
@@ -20,16 +18,14 @@ class UnconnectedSearchBar extends Component {
   render = () => {
       return (
         <div>
-            <h2 class="p-3 mb-2 text-center">
-                Movie Title
-            </h2>
-            <div>
+            <h3 class="p-3 mb-2 text-center">
               <input
+                class='p-3'
                 type="text"
                 onChange={this.handleSearchTermChange}
-                placeholder="Search Term"
+                placeholder="Search movies"
               />
-            </div>
+            </h3>
 
             
         </div>

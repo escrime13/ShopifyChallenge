@@ -3,18 +3,36 @@
 }
 
 body {
-  background-color: #ffffff;
-  margin: 0;
+  height: 100vh;
+  background-attachment: fixed;
+  background-color: #990000;
+  background-image: linear-gradient(
+    to right,
+    rgba(82, 22, 12, 0.9),
+    rgba(82, 22, 12, 0.95),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgb(82, 22, 12),
+    rgba(82, 22, 12, 0.95),
+    rgb(82, 22, 12, 0.9)
+  );
   font-family: '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol';
 }
-input[type='checkbox'] {
-  zoom: 2;
-}
+
 h1 {
   font-size: 2.4rem;
 }
 h2 {
-  font-size: 12rem;
+  font-size: 1.4rem;
 }
 h3 {
   font-size: 1.2rem;
@@ -30,46 +48,16 @@ h5 {
 span {
   font-size: 1rem;
 }
-.spanOveride {
-  margin: 0;
-}
-div {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-select {
-  padding: 1rem;
-  border-radius: 5px;
-}
 input {
   padding: 1rem;
   border-radius: 5px;
 }
-
-a {
-  color: black;
+div {
+  font-size: 1.4rem;
 }
-
-.btnSubmit {
-  border-radius: 25px;
-  background-color: rgba(23, 162, 184, 0.2);
-  border-color: #17a2b8;
-  padding: 1rem;
-  font-weight: bold;
-}
-
-.btnSubmitLogin {
-  border-radius: 25px;
-  background-color: 'white';
-  border-color: #17a2b8;
-  padding: 1rem;
-  font-weight: bold;
-}
-.height100Vh {
-  min-height: 100vh;
-}
-.inline {
-  display: inline;
+/*----------------Classes--------------*/
+.containerSearch {
+  border: 4px double rgb(223, 202, 78);
 }
 .imageLogo {
   border-radius: 25px;
@@ -77,28 +65,21 @@ a {
   max-height: 250px;
 }
 .imageSmall {
-  width: 120px;
-  height: 120px;
+  max-width: 100%;
 }
-.imageLarge {
-  width: 250px;
-  height: 250px;
+.noImage {
+  width: 217px;
+  height: 320px;
+  background-color: white;
+  text-align: center;
 }
-
-.linkOtherSteps {
-  color: #7d90b3;
-}
-.margin10 {
-  margin: 10px;
-}
-.form {
-  width: '100%';
-}
-.hide {
-  display: none;
-}
-.normal {
-  display: inline;
+.searchResults {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  max-width: 50%;
 }
 .inputText {
   width: 90%;
@@ -107,60 +88,4 @@ a {
   border-top: unset;
   border-right: unset;
   border-left: unset;
-}
-.inputResults {
-  /*width: 100%;*/
-  border: 1px solid black;
-  /*padding: 10px;*/
-}
-.inputSelect {
-  width: 90%;
-  background-color: white;
-  border-bottom: 2px solid black;
-  border-top: unset;
-  border-right: unset;
-  border-left: unset;
-}
-.inputSelectDate {
-  width: 50%;
-  background-color: white;
-  border-bottom: 2px solid black;
-  border-top: unset;
-  border-right: unset;
-  border-left: unset;
-}
-.inputSelectPermis {
-  width: 46%;
-  background-color: white;
-  border-bottom: 2px solid black;
-  border-top: unset;
-  border-right: unset;
-  border-left: unset;
-}
-
-.bold {
-  font-weight: bold;
-}
-.link {
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  padding: '5px';
-  margin: '5px';
-  font-size: 1.5rem;
-}
-.overflow {
-  text-overflow: ellipsis;
-}
-.textBox {
-  width: 90%;
-  height: 200px;
-  overflow-y: auto;
-  border: 1px solid black;
-  text-align: top;
-}
-.textDisplay {
-  border-bottom: 1px dotted black;
-  margin-bottom: 10px;
-  /*max-width: 900px;*/
 }

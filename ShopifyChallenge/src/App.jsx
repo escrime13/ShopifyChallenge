@@ -19,11 +19,15 @@ class UnconnectedApp extends Component {
       <div>
         <SearchBar />
       </div>
-      <div class="d-inline-flex">
-        <SearchResults queryMovie={this.props.queryMovie}/>
-      </div>
-      <div class="d-inline-flex">
-        <Nominations nominations ={this.props.nominate}/>
+      <div class="container">
+      <div class="row">
+            <div class="col-6">
+            <SearchResults queryMovie={this.props.queryMovie}/>
+          </div>
+          <div class="col-6">
+            <Nominations nominations ={this.props.nominate}/>
+          </div>
+        </div>
       </div>
     </div>
 
