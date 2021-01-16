@@ -5,7 +5,7 @@ class UnconnectedHeader extends Component {
   render = () => {  
       return (
         <div>
-            <div class="p-5 mt-3 text-center">
+            <div class="p-5 text-center">
               <div className='text-shadow-pop-br'>
                 <h1 className= 'tracking-in-contract'>
                   The Shoppies Awards
