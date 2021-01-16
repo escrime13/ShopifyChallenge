@@ -68,7 +68,7 @@ div {
 }
 
 .containerSearch {
-  border: 10px double rgb(242, 232, 207);
+  border-bottom: 10px solid rgba(167, 201, 87, 0.5);
 }
 
 .imageContainer {

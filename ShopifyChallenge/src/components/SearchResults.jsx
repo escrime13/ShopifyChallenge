@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
-import MovieCarousel from './MoviePosters.jsx'
+import MoviePosters from './MoviePosters.jsx'
 
 class UnconnectedSearchResults extends Component {
 
@@ -53,9 +53,9 @@ handleNominates = (movie)=>{
         <div>
 
             <div className="containerSearch">
-              <h2 class=" text-center pt-3 pb-3">
+              <h3 class=" text-center pt-3 pb-5">
                   Search Results
-              </h2>
+              </h3>
             <div class="text-center">
             </div>
             <div class='container'>
@@ -68,7 +68,7 @@ handleNominates = (movie)=>{
                   let link = "https://www.imdb.com/title/" + imdbId 
 
                   return(
-                      <div key={idx} class='col-xs-12 col-sm-6 col-lg-3'>
+                      <div key={idx} class='col-xs-6 col-sm-4 col-lg-2'>
                         <div class='p-2 mt-2'>
                           <a href={link}  target="_blank">
                             {poster === 'N/A' ? 
@@ -107,7 +107,7 @@ handleNominates = (movie)=>{
               </div>
               </div>
               </div>
-              <MovieCarousel />
+              <MoviePosters />
             </div>
 
       );
