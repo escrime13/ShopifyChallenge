@@ -24,6 +24,7 @@ class UnconnectedNominations extends Component {
     let nominations = this.props.nominations
     nominations.splice(idx, 1)
     nominations.splice(newPosition, 0, movie)
+    this.setState({nominatedMovies: nominations})
     this.props.dispatch({
       type: "nominate",
       nominate: nominations
@@ -37,6 +38,7 @@ class UnconnectedNominations extends Component {
     if (newPosition === length) return
     nominations.splice(idx, 1)
     nominations.splice(newPosition, 0, movie)
+    this.setState({nominatedMovies: nominations})
     this.props.dispatch({
       type: "nominate",
       nominate: nominations
