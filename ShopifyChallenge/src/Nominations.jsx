@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MovieDetails from './searchResults/components/MovieDetails.jsx';
 
 class UnconnectedNominations extends Component {
   constructor(props) {
@@ -50,17 +49,37 @@ class UnconnectedNominations extends Component {
       nominate: nominations
     });
   }
+removeIcon(){
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-x-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+      <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+    </svg>
+  )
+}
+downIcon(){
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+  <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+</svg>
+  )
+}
+upIcon(){
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16">
+    <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+  </svg>
+  )
+}
 
   render = () => {
     let movies = this.props.nominations
+  
       return (
         <div>
           <div>
-            <div className="containerSearch">
-              <h2 class="text-white text-center pt-5 pb-5">
-                  Nominations
-              </h2>
-              <div class="text-white text-center">
+            <div class='container'>
+              <div class='row justify-content-evenly'>
               {movies ? movies.map((result, idx)=>{
                   let rank = idx+1
                   let poster = result.Poster
@@ -68,35 +87,49 @@ class UnconnectedNominations extends Component {
                   let year = result.Year
 
                   return(
-                      <div key={idx} >
-                        <div class='pt-5'>
-                          My #{rank}
-                        </div>
-                          <img className="imageSmall" src={poster} />
-                        <div>
-                        <div class='pb-2'>{title} {' ('}{year}{')'}</div>
-                        <div class='pb-2'>
-                           <button  
-                                               
-                            onClick ={() => this.handleRemoveNominee(result)}                     
-                            type="button" class="btn btn-dark">
-                            Remove
-                          </button>
-                        </div>
-                        <div class='pb-2'>
-                           <button               
+                      <div key={idx} class='col-xs-12 col-sm-6 col-md-4 col-lg-2 pb-5 '>
+
+                        <div class='pt-3 pb-2 justify-content-center'>
+                        <div class='d-flex justify-content-center'>
+                          <div class='d-flex'>
+                          <button               
                             onClick ={() => this.handleRankUp(result, idx)}                     
                             type="button" class="btn btn-danger">
-                            RankUp
+                            {this.upIcon()}
                           </button>
-                        </div>
-                        <div class='pb-2'>
+                          </div>
+                          <div class='d-flex'>
+                          <button                       
+                            onClick ={() => this.handleRemoveNominee(result)}                     
+                            type="button" class="btn btn-dark">
+                            {this.removeIcon()}
+                          </button>
+                          </div>
+                          <div class='d-flex'>
                            <button                 
                             onClick ={() => this.handleRankDown(result, idx)}                     
                             type="button" class="btn btn-danger">
-                            RankDown
+                            {this.downIcon()}
                           </button>
+                          </div>
+           
                         </div>
+                        </div>               
+                        <div class='d-flex justify-content-center'>
+                        {poster === 'N/A' ? 
+                            <div class='align-middle'>
+                            <div className='noImageNomination'>
+                             <div class='pt-2 pb-2'> {title}</div>
+                             <div> No Image Available</div>
+                            </div>
+                            </div>:
+                          <img className="imageNomination" src={poster} />}
+                        </div>
+                        <div class='text-white text-center pb-2'>
+                          My #{rank} : {title} 
+                        </div>
+                        <div class='text-white text-center pb-2'>
+                          {' ('}{year}{')'}
                         </div>
                     </div>
                    

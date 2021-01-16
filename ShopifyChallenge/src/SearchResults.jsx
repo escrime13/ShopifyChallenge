@@ -1,36 +1,22 @@
-import { Button } from 'bootstrap';
-import React, { Component } from 'react';
+import React, { Component} from 'react';
 import { connect } from 'react-redux';
-import MovieDetails from './components/MovieDetails.jsx';
-import Alert from 'bootstrap/js/dist/alert';
+import MovieCarousel from './MovieCarousel.jsx'
 
 class UnconnectedSearchResults extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      nominatedMovies:[]
-  }
 }
 
+
 handleNominates = (movie)=>{
-  let currentNomination = this.state.nominatedMovies
+  let currentNomination = this.props.nominations
   if(currentNomination.length >4){
-      return(
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          You can't nominate more than 5 movies.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      )
+    return
   }
 console.log("currentNomination", currentNomination)
   let alreadyNominated = currentNomination.filter((mov)=>mov.Title === movie.Title)
   if(alreadyNominated.length > 0){
-      return(
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          You have already nominated this movie!
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-  )
+      return
   }
   let newNominations = [...currentNomination, movie]
   this.setState({nominatedMovies: newNominations})
@@ -40,26 +26,31 @@ console.log("currentNomination", currentNomination)
   });
 }
 
+
   render = () => {
       let movies = this.props.queryMovie
       return (
         <div>
+
             <div className="containerSearch">
-              <h2 class="text-white text-center pt-5 pb-5">
+              <h2 class=" text-center pt-3 pb-3">
                   Search Results
               </h2>
-            <div class="text-white text-center">
+            <div class="text-center">
             </div>
             <div class='container'>
-            <div class="row">
+            <div class='row'>
               {movies ? movies.map((result, idx)=>{
                   let poster = result.Poster
                   let title= result.Title
                   let year = result.Year
+                  let imdbId = result.imdbID
+                  let link = "https://www.imdb.com/title/" + imdbId 
 
                   return(
-                      <div key={idx} class='col-6'>
-                          <div class='p-2 '>
+                      <div key={idx} class='col-xs-12 col-sm-6 col-lg-3'>
+                          <div class='p-2 mt-2'>
+                          <a href={link}  target="_blank">
                             {poster === 'N/A' ? 
                             <div class='align-middle'>
                             <div className='noImage'>
@@ -67,31 +58,30 @@ console.log("currentNomination", currentNomination)
                              <div> No Image Available</div>
                             </div>
                             </div>:
-                            
-                            <img className="imageSmall" src={poster} />}
+                            <div className='imageContainer'>
+                              <img className="imageSmall" src={poster} />
+                            </div>
+                            }
+                            </a>
                           </div>
-                          <div class=" text-white text-center">
+                          <div class=" text-center">
                             <div>{title} {' ('}{year}{')'}</div> 
         
-                            <div class="mx-auto" >
-                              <span>
-                                <MovieDetails title={title} />
-                              </span>
-                              <span class='ml-2'>
+                            <div class="d-flex justify-content-center" >
+
+                              <div>
+                                
                                 <button 
-                                    type="button" class="btn btn-warning"                        
+                                    type="button" class="btn btn-warning btn-lg"                        
                                     onClick ={() => this.handleNominates(result)}                     
                                   >
-                                  Nominates
+                                  Nominate
                               </button>
-                              </span>
+                              </div>
                             </div>
                          
                         </div>
                         <div>
-
-
-                        
                         </div>
                     </div>
                   )
@@ -99,6 +89,7 @@ console.log("currentNomination", currentNomination)
               </div>
               </div>
               </div>
+              <MovieCarousel />
             </div>
 
       );
