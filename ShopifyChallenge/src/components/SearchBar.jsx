@@ -5,7 +5,7 @@ class UnconnectedSearchBar extends Component {
 
   handleSearchTermChange = async (event) => {
   let searchTerm = event.target.value
-  let response = await fetch('http://www.omdbapi.com/?s='+searchTerm+'&type=movie&apikey=d4af04a8')
+  let response = await fetch('https://www.omdbapi.com/?s='+searchTerm+'&type=movie&apikey=d4af04a8')
   let movieData = await response.json() 
   let searchResults = movieData.Search
   console.log(searchResults)    
