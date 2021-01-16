@@ -1,12 +1,8 @@
 import React, { Component} from 'react';
 import { connect } from 'react-redux';
-import MovieCarousel from './MovieCarousel.jsx'
+import MovieCarousel from './MoviePosters.jsx'
 
 class UnconnectedSearchResults extends Component {
-  constructor(props) {
-    super(props);
-}
-
 
 starIcon(){
   return(
@@ -51,7 +47,6 @@ handleNominates = (movie)=>{
   });
 }
 
-
   render = () => {
       let movies = this.props.queryMovie
       return (
@@ -74,43 +69,38 @@ handleNominates = (movie)=>{
 
                   return(
                       <div key={idx} class='col-xs-12 col-sm-6 col-lg-3'>
-                          <div class='p-2 mt-2'>
+                        <div class='p-2 mt-2'>
                           <a href={link}  target="_blank">
                             {poster === 'N/A' ? 
                             <div class='text-center'>
-                            <div className='noImage'>
-                             <h3 class='pt-2 pb-2 text-body'> {title}</h3>
-                             <div>{this.unavailableIcon()}</div>
-                             <h3 class='text-body'>Image</h3>
-                             <h3 class='text-body'>Unavailable</h3>
-                            </div>
+                              <div className='noImage'>
+                                <h3 class='pt-2 pb-2 text-body'> {title}</h3>
+                                <div>{this.unavailableIcon()}</div>
+                                <h3 class='text-body'>Image</h3>
+                                <h3 class='text-body'>Unavailable</h3>
+                              </div>
                             </div>:
-                            <div className='imageContainer'>
                               <img className="imageSmall" src={poster} />
-                            </div>
                             }
-                            </a>
+                          </a>
                           </div>
                           <div class=" text-center">
-                            <div>{title} {' ('}{year}{')'}</div> 
-        
+                            <div class='text-truncate'>{title} </div>
+                            <div>{' ('}{year}{')'}</div> 
                             <div class="d-flex justify-content-center" >
-
                               <div>
-                                
                                 <button 
                                     type="button" class={this.handleDisable(title)}                       
                                     onClick ={() => this.handleNominates(result)}                     
                                   >
-                                      {this.starIcon()}                   
-                                      Nominate  
+                                    {this.starIcon()}                   
+                                    Nominate  
                               </button>
                               </div>
                             </div>
-                         
-                        </div>
+                          </div>
                         <div>
-                        </div>
+                      </div>
                     </div>
                   )
               }):''}

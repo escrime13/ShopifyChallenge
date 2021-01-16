@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
-class UnconnectedMovieCarousel extends Component {
+class UnconnectedMoviePosters extends Component {
 
-  
   render = () => {
 
       let data=[
@@ -96,15 +94,15 @@ class UnconnectedMovieCarousel extends Component {
         {poster:"https://m.media-amazon.com/images/M/MV5BZTAzNWZlNmUtZDEzYi00ZjA5LWIwYjEtZGM1NWE1MjE4YWRhXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
          title:"Finding Nemo"}, 
          {poster: "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_SX300.jpg", 
-        title:"Django Unchained"}
+          title:"Django Unchained"},
+         {poster:"https://m.media-amazon.com/images/M/MV5BNDdhMzMxOTctNDMyNS00NTZmLTljNWEtNTc4MDBmZTYxY2NmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
+          title:"Crouching Tiger Hidden Drangon"}
 
 
       
       ]
       return (
-
-
-          <div class='d-flex flex-wrap  justify-content-center mt-2'>
+          <div class='d-flex flex-wrap  justify-content-center mt-5'>
             {data.map((movie, idx)=>{
               let title = movie.title
               let poster = movie.poster
@@ -120,6 +118,6 @@ class UnconnectedMovieCarousel extends Component {
     }
   };
 
-let MovieCarousel = UnconnectedMovieCarousel;
-export default MovieCarousel;
+let MoviePosters = UnconnectedMoviePosters;
+export default MoviePosters;
 

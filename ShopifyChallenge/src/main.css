@@ -72,7 +72,7 @@ div {
 }
 
 .imageContainer {
-  height: 380px;
+  height: 100%;
 }
 .imageLogo {
   border-radius: 25px;
@@ -114,6 +114,7 @@ div {
 .textContainer {
   height: 80px;
 }
+
 .whiteImage {
   color: rgb(242, 232, 207);
 }

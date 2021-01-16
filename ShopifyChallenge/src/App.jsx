@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
-import Done from './Done.jsx';
-import Header from './Header.jsx'
-import Nominations from './Nominations.jsx';
-import SearchBar from'./SearchBar.jsx';
-import SearchResults from './SearchResults.jsx';
+import Done from './components/Done.jsx';
+import Header from './components/Header.jsx'
+import Nominations from './components/Nominations.jsx';
+import SearchBar from'./components/SearchBar.jsx';
+import SearchResults from './components/SearchResults.jsx';
 
 
 
