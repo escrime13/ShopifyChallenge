@@ -20,21 +20,21 @@ class UnconnectedSearchBar extends Component {
   render = () => {
       return (
         <div>
-            <h4 class="p-3 mt-1 mb-3 text-center">
+            <h4 class="p-3 mt-1 mb-1 text-center">
               Nominate your favorite movies for a Shoppies Award!
             </h4>
             <h5 class="p-3 mb-2 text-center">
                Use the search bar below to find and nominate up to 5 movies!
             </h5>
 
-            <h3 class=" mb-5 text-center">
+            <h5 class=" mb-5 text-center">
               <input
                 class="text-center"
                 type="text"
                 onChange={this.handleSearchTermChange}
                 placeholder="Movie Title"
               />
-            </h3>
+            </h5>
 
             
         </div>

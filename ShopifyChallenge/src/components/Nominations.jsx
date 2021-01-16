@@ -84,7 +84,7 @@ upIcon(idx){
                   let year = result.Year
                   return(
                       <div key={idx} class='col-xs-12 col-sm-6 col-md-4 col-lg-2 pb-5 '>
-                        <div class='pt-3 pb-2 justify-content-center'>
+                        <div class='pt-1 pb-1 justify-content-center'>
                          <div class='d-flex justify-content-center text-body text-bold pb-2'>
                            {this.trophyIcon()}
                            <h3 className='rank'>#{rank}</h3>
