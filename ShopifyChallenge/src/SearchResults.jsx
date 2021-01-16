@@ -23,12 +23,22 @@ unavailableIcon(){
   )
 }
 
+handleDisable=(title)=>{
+  let currentNomination = this.props.nominations
+  console.log("currentNomination", currentNomination)
+  let alreadyNominated = currentNomination.filter((mov)=>mov.Title === title)
+  if(alreadyNominated.length > 0){
+      return ("btn btn-secondary btn-lg")
+  }
+  return ("btn btn-warning btn-lg")
+}
+
 handleNominates = (movie)=>{
   let currentNomination = this.props.nominations
   if(currentNomination.length >4){
     return
   }
-console.log("currentNomination", currentNomination)
+  console.log("currentNomination", currentNomination)
   let alreadyNominated = currentNomination.filter((mov)=>mov.Title === movie.Title)
   if(alreadyNominated.length > 0){
       return
@@ -89,7 +99,7 @@ console.log("currentNomination", currentNomination)
                               <div>
                                 
                                 <button 
-                                    type="button" class="btn btn-warning btn-lg"                        
+                                    type="button" class={this.handleDisable(title)}                       
                                     onClick ={() => this.handleNominates(result)}                     
                                   >
                                       {this.starIcon()}                   
