@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import MovieCarousel from './MovieCarousel.jsx'
 
 class UnconnectedHeader extends Component {
-  render = () => {
+
+  render = () => {  
       return (
         <div>
-            <h1 class="p-5 mt-5 mb-5 text-center">
-                The Shoppies
-            </h1>
+            <div class="p-5 mt-5 text-center">
+              <div className='text-shadow-pop-br'>
+                <h1 className= 'tracking-in-contract'>
+                  The Shoppies Awards
+                  
+                </h1>
+              
+              </div> 
+              <div className='tracking-in-contract-bck-bottom'>
+                 <p className='italic'>by Anne-Sophie</p> 
+              </div> 
+
+            </div>
         </div>
       );
     }

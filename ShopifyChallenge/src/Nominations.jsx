@@ -9,7 +9,17 @@ class UnconnectedNominations extends Component {
   }
 }
   
+  trophyIcon(){
+    return(
+      <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFC107" class="bi bi-trophy-fill" viewBox="0 0 24 24">
+          <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935z"/>
+        </svg>
+      </div>
+    )
   
+  }
+
   handleRemoveNominee=(movie)=>{
     console.log("remove")
     let nominations = this.props.nominations
@@ -79,7 +89,7 @@ upIcon(){
         <div>
           <div>
             <div class='container'>
-              <div class='row justify-content-evenly'>
+              <div class='row justify-content-evenly backgroundNomination'>
               {movies ? movies.map((result, idx)=>{
                   let rank = idx+1
                   let poster = result.Poster
@@ -88,9 +98,25 @@ upIcon(){
 
                   return(
                       <div key={idx} class='col-xs-12 col-sm-6 col-md-4 col-lg-2 pb-5 '>
-
+                        
                         <div class='pt-3 pb-2 justify-content-center'>
+                         <div class='d-flex justify-content-center text-body text-bold pb-2'>
+                           {this.trophyIcon()}
+                           <div className='rank'>#{rank}</div>
+                          </div>
+                         <div class='d-flex justify-content-center'>
+                          
+                          {poster === 'N/A' ? 
+                              <div class='align-middle'>
+                              <div className='noImageNomination'>
+                               <div class='pt-2 pb-2'> {title}</div>
+                               <div> No Image Available</div>
+                              </div>
+                              </div>:
+                            <img className="imageNomination" src={poster} />}
+                          </div>
                         <div class='d-flex justify-content-center'>
+
                           <div class='d-flex'>
                           <button               
                             onClick ={() => this.handleRankUp(result, idx)}                     
@@ -112,34 +138,23 @@ upIcon(){
                             {this.downIcon()}
                           </button>
                           </div>
-           
                         </div>
-                        </div>               
-                        <div class='d-flex justify-content-center'>
-                        {poster === 'N/A' ? 
-                            <div class='align-middle'>
-                            <div className='noImageNomination'>
-                             <div class='pt-2 pb-2'> {title}</div>
-                             <div> No Image Available</div>
-                            </div>
-                            </div>:
-                          <img className="imageNomination" src={poster} />}
+                        </div> 
+                        <div class='text-center text-body text-bold pb-2'>
+                          {title} 
                         </div>
-                        <div class='text-white text-center pb-2'>
-                          My #{rank} : {title} 
-                        </div>
-                        <div class='text-white text-center pb-2'>
+                        <div class='text-center text-body text-bold pb-2'>
                           {' ('}{year}{')'}
+                          </div>
                         </div>
-                    </div>
+                   
                    
                   )
               }):''}
               </div>
+             </div>
             </div>
-
           </div>
-        </div>
       );
     }
   };

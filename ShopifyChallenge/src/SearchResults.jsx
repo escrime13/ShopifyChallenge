@@ -8,6 +8,21 @@ class UnconnectedSearchResults extends Component {
 }
 
 
+starIcon(){
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-star-fill" viewBox="0 0 24 24">
+      <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+    </svg>
+  )
+}
+unavailableIcon(){
+  return(
+    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="rgb(188, 71, 73)" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+    </svg>
+  )
+}
+
 handleNominates = (movie)=>{
   let currentNomination = this.props.nominations
   if(currentNomination.length >4){
@@ -52,10 +67,12 @@ console.log("currentNomination", currentNomination)
                           <div class='p-2 mt-2'>
                           <a href={link}  target="_blank">
                             {poster === 'N/A' ? 
-                            <div class='align-middle'>
+                            <div class='text-center'>
                             <div className='noImage'>
-                             <div class='pt-2 pb-2'> {title}</div>
-                             <div> No Image Available</div>
+                             <h3 class='pt-2 pb-2 text-body'> {title}</h3>
+                             <div>{this.unavailableIcon()}</div>
+                             <h3 class='text-body'>Image</h3>
+                             <h3 class='text-body'>Unavailable</h3>
                             </div>
                             </div>:
                             <div className='imageContainer'>
@@ -75,7 +92,8 @@ console.log("currentNomination", currentNomination)
                                     type="button" class="btn btn-warning btn-lg"                        
                                     onClick ={() => this.handleNominates(result)}                     
                                   >
-                                  Nominate
+                                      {this.starIcon()}                   
+                                      Nominate  
                               </button>
                               </div>
                             </div>
