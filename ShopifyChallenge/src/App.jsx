@@ -7,8 +7,6 @@ import Nominations from './components/Nominations.jsx';
 import SearchBar from'./components/SearchBar.jsx';
 import SearchResults from './components/SearchResults.jsx';
 
-
-
 class UnconnectedApp extends Component {
   render() {
     return (

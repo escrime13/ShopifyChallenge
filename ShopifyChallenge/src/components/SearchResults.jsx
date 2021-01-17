@@ -68,7 +68,7 @@ handleNominates = (movie)=>{
                   let link = "https://www.imdb.com/title/" + imdbId 
 
                   return(
-                      <div key={idx} class='col-xs-6 col-sm-4 col-lg-2'>
+                      <div key={idx} class='col-xs-6 col-sm-4 col-lg-3'>
                         <div class='p-2 mt-2'>
                           <a href={link}  target="_blank">
                             {poster === 'N/A' ? 
@@ -107,7 +107,9 @@ handleNominates = (movie)=>{
               </div>
               </div>
               </div>
+              <div class='d-none d-sm-block'>
               <MoviePosters />
+              </div>
             </div>
 
       );

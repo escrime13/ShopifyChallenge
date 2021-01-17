@@ -26,7 +26,6 @@ class UnconnectedSearchBar extends Component {
             <h5 class="p-2 mb-2 text-center">
                Use the search bar below to find and nominate up to 5 movies!
             </h5>
-
             <h5 class=" mb-3 text-center">
               <input
                 class="text-center"
@@ -35,8 +34,6 @@ class UnconnectedSearchBar extends Component {
                 placeholder="Movie Title"
               />
             </h5>
-
-            
         </div>
       );
     }
@@ -44,7 +41,7 @@ class UnconnectedSearchBar extends Component {
 
 let mapStateToProps = (state) => {
   return {
-    loggedIn: state.loggedIn,
+
   };
 };
 let SearchBar = connect(mapStateToProps)(UnconnectedSearchBar);
