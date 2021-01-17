@@ -108,9 +108,9 @@ upIcon(idx){
                           {poster === 'N/A' ? 
                               <div class='align-middle'>
                               <div className='noImageNomination'>
-                               <h3 class='pt-3 pb-3 text-body'> {title}</h3>
+                               <h5 class='pt-3 pb-3 text-body'> {title}</h5>
                                <div>{this.unavailableIcon()}</div>
-                               <h3 class='text-body'> No Available Image</h3>
+                               <h5 class='text-body'> No Available Image</h5>
                               </div>
                               </div>:
                             <img className="imageNomination" src={poster} />}
