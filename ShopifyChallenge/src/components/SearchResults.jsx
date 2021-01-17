@@ -13,7 +13,7 @@ starIcon(){
 }
 unavailableIcon(){
   return(
-    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="rgb(188, 71, 73)" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(188, 71, 73)" class="bi bi-dash-circle-fill" viewBox="0 0 16 16">
       <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
     </svg>
   )
@@ -74,9 +74,7 @@ handleNominates = (movie)=>{
                             {poster === 'N/A' ?   
                             <div class='align-middle'>
                               <div className='noImage'>
-                                <h4 class='pt-3 pb-3 text-body'> {title}</h4>
                                 <div>{this.unavailableIcon()}</div>
-                                <h4 class='text-body'>No Available Image </h4>
                               </div>
                             </div>:
                               <img className="imageSmall" src={poster} />
