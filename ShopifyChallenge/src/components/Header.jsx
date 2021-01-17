@@ -11,7 +11,7 @@ class UnconnectedHeader extends Component {
                   The Shoppies Awards
                 </h1>
               </div> 
-              <div className='tracking-in-contract-bck-bottom'>
+              <div className='slide-in-left'>
                  <p className='italic'>by Anne-Sophie</p> 
               </div> 
             </div>

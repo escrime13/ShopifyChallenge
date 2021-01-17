@@ -82,8 +82,8 @@ div {
 
 .imageSmall {
   display: flex;
-  height: 135px;
-  width: 90px;
+  height: 225px;
+  width: 150px;
   margin: auto;
 }
 .imageSmall:hover {
@@ -100,8 +100,8 @@ div {
   font-style: oblique;
 }
 .noImage {
-  height: 135px;
-  width: 90px;
+  height: 225px;
+  width: 150px;
   background-color: rgb(242, 232, 207);
   color: black;
   text-align: center;
