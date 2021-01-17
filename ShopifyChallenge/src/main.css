@@ -104,9 +104,10 @@ div {
   text-align: center;
 }
 .noImageNomination {
+  color: black;
   height: 225px;
   width: 150px;
-  background-color: black;
+  background-color: rgb(242, 232, 207);
   text-align: center;
 }
 .rank {
