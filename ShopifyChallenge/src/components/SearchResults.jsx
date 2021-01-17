@@ -19,10 +19,10 @@ unavailableIcon(){
   )
 }
 
-handleDisable=(title)=>{
+handleDisable=(imdbID)=>{
   let currentNomination = this.props.nominations
   console.log("currentNomination", currentNomination)
-  let alreadyNominated = currentNomination.filter((mov)=>mov.Title === title)
+  let alreadyNominated = currentNomination.filter((mov)=>mov.imdbID === imdbID)
   if(alreadyNominated.length > 0){
       return ("btn btn-secondary btn-lg")
   }
@@ -35,7 +35,7 @@ handleNominates = (movie)=>{
     return
   }
   console.log("currentNomination", currentNomination)
-  let alreadyNominated = currentNomination.filter((mov)=>mov.Title === movie.Title)
+  let alreadyNominated = currentNomination.filter((mov)=>mov.imdbID === movie.imdbID)
   if(alreadyNominated.length > 0){
       return
   }
@@ -64,15 +64,15 @@ handleNominates = (movie)=>{
                   let poster = result.Poster
                   let title= result.Title
                   let year = result.Year
-                  let imdbId = result.imdbID
-                  let link = "https://www.imdb.com/title/" + imdbId 
+                  let imdbID = result.imdbID
+                  let link = "https://www.imdb.com/title/" + imdbID 
 
                   return(
                       <div key={idx} class='col-xs-6 col-sm-4 col-lg-3'>
-                        <div class='p-2 mt-2'>
+                        <div class='d-flex justify-content-center'>
                           <a href={link}  target="_blank">
-                            {poster === 'N/A' ? 
-                            <div class='text-center'>
+                            {poster === 'N/A' ?   
+                            <div class='align-middle'>
                               <div className='noImage'>
                                 <h3 class='pt-2 pb-2 text-body'> {title}</h3>
                                 <div>{this.unavailableIcon()}</div>
@@ -88,9 +88,9 @@ handleNominates = (movie)=>{
                             <div class='text-truncate'>{title} </div>
                             <div>{' ('}{year}{')'}</div> 
                             <div class="d-flex justify-content-center" >
-                              <div>
+                              <div class='mb-2'>
                                 <button 
-                                    type="button" class={this.handleDisable(title)}                       
+                                    type="button" class={this.handleDisable(imdbID)}                       
                                     onClick ={() => this.handleNominates(result)}                     
                                   >
                                     {this.starIcon()}                   

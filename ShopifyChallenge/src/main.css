@@ -81,8 +81,10 @@ div {
 }
 
 .imageSmall {
-  max-width: 100%;
-  max-height: 100%;
+  display: flex;
+  height: 300px;
+  width: 200px;
+  margin: auto;
 }
 .imageNomination {
   height: 225px;
@@ -95,12 +97,11 @@ div {
   font-style: oblique;
 }
 .noImage {
-  width: 90%;
-  height: 380px;
+  height: 300px;
+  width: 200px;
   background-color: rgb(242, 232, 207);
-  margin: 'auto';
   color: black;
-  text-decoration: none;
+  text-align: center;
 }
 .noImageNomination {
   height: 225px;
