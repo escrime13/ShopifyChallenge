@@ -74,9 +74,9 @@ handleNominates = (movie)=>{
                             {poster === 'N/A' ?   
                             <div class='align-middle'>
                               <div className='noImage'>
-                                <h3 class='pt-3 pb-3 text-body'> {title}</h3>
+                                <h4 class='pt-3 pb-3 text-body'> {title}</h4>
                                 <div>{this.unavailableIcon()}</div>
-                                <h3 class='text-body'>No Available Image </h3>
+                                <h4 class='text-body'>No Available Image </h4>
                               </div>
                             </div>:
                               <img className="imageSmall" src={poster} />
