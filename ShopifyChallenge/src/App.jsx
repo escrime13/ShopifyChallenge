@@ -20,13 +20,13 @@ class UnconnectedApp extends Component {
       </div>
        {this.props.nominate.length <= 4 ? 
        <div>
-     <div>
+      <div>
         <SearchBar /> 
       </div>
       <div>
         <SearchResults 
           queryMovie={this.props.queryMovie}
-          nominations ={this.props.nominate}/>
+          nominations={this.props.nominate}/>
       </div> 
       </div>: <Done />}
     </div>
@@ -34,7 +34,6 @@ class UnconnectedApp extends Component {
   }
 }
 let mapStateToProps = (state) => {
-  console.log('state', state);
   return {
     queryMovie: state.queryMovie,
     queryDetails: state.queryDetails, 

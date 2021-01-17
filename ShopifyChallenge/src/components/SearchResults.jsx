@@ -21,7 +21,6 @@ unavailableIcon(){
 
 handleDisable=(imdbID)=>{
   let currentNomination = this.props.nominations
-  console.log("currentNomination", currentNomination)
   let alreadyNominated = currentNomination.filter((mov)=>mov.imdbID === imdbID)
   if(alreadyNominated.length > 0){
       return ("btn btn-secondary btn-lg")
@@ -34,7 +33,6 @@ handleNominates = (movie)=>{
   if(currentNomination.length >4){
     return
   }
-  console.log("currentNomination", currentNomination)
   let alreadyNominated = currentNomination.filter((mov)=>mov.imdbID === movie.imdbID)
   if(alreadyNominated.length > 0){
       return
@@ -72,16 +70,11 @@ handleNominates = (movie)=>{
                         <div class='d-flex justify-content-center'>
                           <a href={link}  target="_blank">
                             {poster === 'N/A' ? 
-                                
                               <div className='noImage'> 
-                             
                                <div class='text-body pt-5 pb-3'>
                                  N/A
                                </div> 
                                 {this.unavailableIcon()}
-                               
-                
-                                 
                                </div>
                             :
                               <img className="image" src={poster} />
