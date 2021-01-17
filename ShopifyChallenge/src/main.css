@@ -61,6 +61,7 @@ div {
   background-color: rgba(167, 201, 87, 0.5);
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 }
 .carouselDiv {
   height: 150px;
@@ -68,9 +69,6 @@ div {
 }
 .containerSearch {
   border-bottom: 10px solid rgba(167, 201, 87, 0.5);
-}
-.imageContainer {
-  height: 100%;
 }
 .imageLogo {
   border-radius: 25px;
@@ -113,11 +111,4 @@ div {
 }
 .rank {
   color: #ffc107;
-}
-.textContainer {
-  height: 80px;
-}
-
-.whiteImage {
-  color: rgb(242, 232, 207);
 }

@@ -7,7 +7,7 @@ class UnconnectedHeader extends Component {
         <div>
             <div class="pt-3 text-center">
               <div className='text-shadow-pop-br'>
-                <h1 className= 'tracking-in-contract'>
+                <h1 className= 'text-shadow-pop-br'>
                   The Shoppies Awards
                 </h1>
               </div> 
