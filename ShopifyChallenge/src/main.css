@@ -67,9 +67,7 @@ div {
   height: 150px;
   width: 100px;
 }
-.containerSearch {
-  border-bottom: 10px solid rgba(167, 201, 87, 0.5);
-}
+
 .imageLogo {
   border-radius: 25px;
   max-width: 250px;

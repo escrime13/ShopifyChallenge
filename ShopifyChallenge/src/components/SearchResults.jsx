@@ -49,8 +49,6 @@ handleNominates = (movie)=>{
       let movies = this.props.queryMovie
       return (
         <div>
-
-            <div className="containerSearch">
             <div class="text-center">
             </div>
             <div class='container'>
@@ -97,7 +95,6 @@ handleNominates = (movie)=>{
                     </div>
                   )
               }):''}
-              </div>
               </div>
               </div>
               <div class='d-none d-sm-block'>
