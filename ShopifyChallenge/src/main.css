@@ -87,8 +87,8 @@ div {
   margin: auto;
 }
 .imageNomination {
-  height: 225px;
-  width: 150px;
+  height: 150px;
+  width: 100px;
 }
 .imageNomination:hover {
   transform: scale(2);
@@ -105,8 +105,8 @@ div {
 }
 .noImageNomination {
   color: black;
-  height: 225px;
-  width: 150px;
+  height: 150px;
+  width: 100px;
   background-color: rgb(242, 232, 207);
   text-align: center;
 }
