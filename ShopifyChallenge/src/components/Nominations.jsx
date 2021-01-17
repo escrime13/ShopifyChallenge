@@ -107,8 +107,12 @@ upIcon(idx){
                          <div class='d-flex justify-content-center'>
                           {poster === 'N/A' ? 
                               <div class='align-middle'>
+                             
                               <div className='noImageNomination'>
-                               <div>{this.unavailableIcon()}</div>
+                                <div class='text-body pt-2 pb-1'>
+                                  N/A 
+                                </div> 
+                                {this.unavailableIcon()}
                               </div>
                               </div>:
                             <img className="imageNomination" src={poster} />}

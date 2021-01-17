@@ -49,7 +49,7 @@ span {
   font-size: 1rem;
 }
 input {
-  padding: 1rem 0 1rem 1rem;
+  padding: 10px;
   border: 10px solid rgb(106, 153, 78);
   color: black;
 }
@@ -66,11 +66,9 @@ div {
   height: 150px;
   width: 100px;
 }
-
 .containerSearch {
   border-bottom: 10px solid rgba(167, 201, 87, 0.5);
 }
-
 .imageContainer {
   height: 100%;
 }
@@ -80,13 +78,13 @@ div {
   max-height: 250px;
 }
 
-.imageSmall {
+.image {
   display: flex;
   height: 225px;
   width: 150px;
   margin: auto;
 }
-.imageSmall:hover {
+.image:hover {
   transform: scale(2);
 }
 .imageNomination {
