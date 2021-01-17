@@ -51,9 +51,9 @@ handleNominates = (movie)=>{
         <div>
 
             <div className="containerSearch">
-              <h3 class=" text-center pt-3 pb-5">
+              {/*<h3 class=" text-center pt-3 pb-5">
                   Search Results
-              </h3>
+      </h3>*/}
             <div class="text-center">
             </div>
             <div class='container'>
@@ -64,7 +64,6 @@ handleNominates = (movie)=>{
                   let year = result.Year
                   let imdbID = result.imdbID
                   let link = "https://www.imdb.com/title/" + imdbID 
-
                   return(
                       <div key={idx} class='col-xs-6 col-sm-4 col-lg-3'>
                         <div class='d-flex justify-content-center'>
